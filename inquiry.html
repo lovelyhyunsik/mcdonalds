@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/response.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div class="inquiry_wrap">
+        <header>
+            <div class="logo">
+                <img src="./mc_logo.png" alt="">
+            </div>
+        </header>
+        <h1>식품안전 365</h1>
+        <p>언제나, 어디서나, 최우선으로 식품안전을 생각하는 맥도날드를 위해 여러분들의 제안과 문의사항을 올려주세요. <br> 식품안전 365에 작성하신 내용은 맥도날드의 식품안전 강화를 위해 내부에서 공유 및 활용할 수 있습니다.(익명보장)</p>
+        <div class="inquiry_container">
+            <table>
+                <tbody>
+                    <tr class="type">
+                        <td>*분류</td>
+                        <td>
+                            <div class="drop_box">
+                                <div class="select_box_wrap">
+                                    <div class="selectBox_type">
+                                        <button class="label">선택하세요.</button>
+                                        <ul class="optionItem_wrap" id="crops1">
+                                            <li class="optionItem">공지사항메뉴얼</li>
+                                            <li class="optionItem">원재료</li>
+                                            <li class="optionItem">보관</li>
+                                            <li class="optionItem">조리</li>
+                                            <li class="optionItem">장비</li>
+                                            <li class="optionItem">절차</li>
+                                            <li class="optionItem">매장청결</li>
+                                            <li class="optionItem">기타</li>
+                                        </ul>
+                                    </div> 
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="title">
+                        <td>*제목</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr class="content">
+                        <td>*내용</td>
+                        <td>
+                            <textarea name="content_filed" id="" cols="30" rows="10"></textarea>
+                        </td>
+                    </tr>
+                    <tr class="file">
+                        <td>파일첨부<br>(선택사항)</td>
+                        <td>
+                            <input type="file" name="FileName">
+                            <p>파일용량 : 10MB까지</p>
+                            <p>첨부 가능 형식: JPG,JPEG,JPE,JFIF,GiF,TIF,TIFF,PNG /zip</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>※ 답변 수신을 원하시면 email 주소를 남겨주세요.(선택사항)</p>
+            <table class="email_table">
+                <tbody>
+                    <tr class="email">
+                        <td>이메일</td>
+                        <td>
+                            <input type="text">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="notice">
+                <p>1. 개인정보의 수집 이용 목적 : 식품안전 365 작성 사안에 대한 답변</p>
+                <p>2. 수집하려는 개인정보의 항목 : 이메일</p>
+                <p>3. 개인정보의 보유 및 이용 기간 : 식품안전 365 작성 사안에 대한 답변시까지이며 답변 후 즉시 삭제</p>
+                <p>**위 사항에 동의하지 않으실 수 있으나 그 경우 작성 사안에 대한 답변 수신이 불가능합니다.</p>
+                <a href="">개인정보처리방침</a>
+                <div class="radio_btn">
+                    <div class="check">
+                        <input type="radio" name="check"><label>동의함</label>
+                    </div>
+                    <div class="not_check">
+                        <input type="radio" name="check"><label>동의안함</label>
+                    </div>
+                </div>
+            </div>
+            <button>저장</button>
+        </div>
+    </div>
+</body>
+<script>
+    $('.selectBox_type>.label').click(function(){
+    $(this).toggleClass('on');
+    $(this).siblings('.optionItem_wrap').toggleClass('on')
+  })
+
+  $('.selectBox_type>.optionItem_wrap>.optionItem').click(function(e){
+      var text_change = $(this).text()
+      $('.selectBox_type>.optionItem_wrap>.optionItem').removeClass('on')
+      $(this).addClass('on')
+      $(this).parents('.optionItem_wrap').siblings('.label').text(text_change).css("color","#222")
+      $('.selectBox_type>.optionItem_wrap>.optionItem').css("background","none")
+      $(this).css("background","#f5f5f5")
+      $('.selectBox_type>.optionItem_wrap').removeClass('on')
+      $('.selectBox_type>.label').removeClass('on')
+      $('.selectBox_type_detail').css("display","block")
+
+      var optionType = e.target.dataset.id;
+      $('.optionList').css("display","none")
+      $(`.optionList.${optionType}`).css('display','block');
+
+      $('.selectBox_type>.optionItem_wrap').removeClass('on');
+  })
+
+  function deselect(){
+    $(".radio_btn > input").prop('checked' , false)
+  }
+</script>
+</html>
