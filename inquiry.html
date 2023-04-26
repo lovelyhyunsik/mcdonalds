@@ -56,7 +56,9 @@
                     <tr class="file">
                         <td>파일첨부<br>(선택사항)</td>
                         <td>
-                            <input type="file" name="FileName[]" multiple="multiple">
+                            <label for="ex_file">파일찾기</label>
+                            <div class="file_name_box">첨부 파일</div>
+                            <input type='file' name='upload[]' id="ex_file" multiple/>
                             <p>파일용량 : 10MB까지</p>
                             <p>첨부 가능 형식: JPG,JPEG,PNG</p>
                         </td>
@@ -145,5 +147,10 @@
   function deselect(){
     $(".radio_btn > input").prop('checked' , false)
   }
+
+  $("#ex_file").on('change',function(){
+  var fileName = $("#ex_file").val();
+  $(".file_name_box").text(fileName);
+});
 </script>
 </html>

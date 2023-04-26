@@ -77,9 +77,13 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr > td{box-sizing: border-box; padding: 10px 20px 10px 20px;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr > td:first-child{background: #f4f4f4; width: 20%; min-width: 120px; font-size: 18px; text-align: center;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr > td:last-child{width: 70%; position: relative; text-align: left;}
-.inquiry_wrap > .inquiry_container > table > tbody > tr > td > input{width: 80%; min-width: 300px; height: 44px; border: 1px solid #e2e2e2; border-radius: 4px; box-sizing: border-box; padding-left: 16px; color: #222; font-size: 14px;}
+.inquiry_wrap > .inquiry_container > table > tbody > tr > td > input{width: 80%; height: 44px; border: 1px solid #e2e2e2; border-radius: 4px; box-sizing: border-box; padding-left: 16px; color: #222; font-size: 14px;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr.content > td > textarea{width: 80%; min-width: 300px; height: 200px; border: 1px solid #e2e2e2; border-radius: 4px; box-sizing: border-box; padding: 16px; color: #222; font-size: 14px; outline: none;}
-.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > input{width: auto; border: none; padding: 0; cursor: pointer;}
+.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > label{display: inline-block; width: 100px; height: 40px;background: #969696; color: #fff; font-size: 14px; text-align: center; line-height: 40px; border-radius: 4px; cursor: pointer; margin-bottom: 10px;}
+.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > label:hover{background: #222;}
+.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > .file_name_box{width: 52.6%; min-width: 195px; margin-left: 5px; height: 40px; border: 1px solid #e2e2e2; display: inline-block; vertical-align: top; border-radius: 5px; box-sizing: border-box;color: #222; font-size: 14px; line-height: 40px; padding: 0 16px; white-space: nowrap; overflow: hidden;}
+.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > input::placeholder{color: #bdbdbd;} 
+.inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > input[type="file"]{position: absolute; width: 0; height: 0; padding: 0; overflow: hidden; border: 0;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr.file > td > p{font-size: 14px;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr.email > td > input{width: 100px; min-width: 80px;}
 .inquiry_wrap > .inquiry_container > table > tbody > tr.email > td > span{margin: 10px; font-size: 14px;}
@@ -96,7 +100,7 @@ body{font-family: 'Noto Sans KR', sans-serif;}
 .inquiry_wrap > .inquiry_container > .notice > .radio_btn > div > label{display: inline-flex; align-items: center; margin-left: 10px;  font-size: 16px;}
 .inquiry_wrap > .inquiry_container > .notice > .radio_btn > div:last-child{margin-left: 20px;}
 .inquiry_wrap > .inquiry_container > .notice > .radio_btn > label:first-child{margin-right: 10px;}
-.inquiry_wrap > .inquiry_container > button{text-align: center; width: 80px; height: 40px; color: #fff; font-size: 14px; background: #b00808; line-height: 30px;  margin-top: 20px; position: absolute;}
+.inquiry_wrap > .inquiry_container > button{text-align: center; width: 80px; height: 40px; color: #fff; font-size: 14px; background: #b00808; line-height: 30px;  margin-top: 20px;}
 
 
 
